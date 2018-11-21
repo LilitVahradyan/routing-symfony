@@ -1,0 +1,7 @@
+pages:
+    resource: '@BlogBundle/Resources/config/route/pages.yml'
+posts:
+    resource: '@BlogBundle/Resources/config/route/post.yml'
+
+
+    

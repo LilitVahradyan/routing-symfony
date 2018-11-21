@@ -1,0 +1,14 @@
+blog_homepage:
+    path: /
+    defaults: { _controller: BlogBundle:Home:index }
+about:
+    path: about/
+    controller: BlogBundle:Pages:about
+contact:
+    path: contact/
+    controller: BlogBundle:Pages:contact
+blank:
+    path: blank/
+    controller: BlogBundle:Pages:blank
+
+    
