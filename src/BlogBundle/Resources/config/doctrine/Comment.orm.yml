@@ -1,0 +1,57 @@
+BlogBundle\Entity\Comment:
+    type: entity
+    table: comment
+    indexes:
+        user_id:
+            columns:
+                - user_id
+        post_id:
+            columns:
+                - post_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        userId:
+            type: bigint
+            nullable: true
+            options:
+                unsigned: true
+            column: user_id
+        postId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: true
+            column: post_id
+        name:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+        message:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        createdAt:
+            type: datetime
+            nullable: true
+            options:
+                default: CURRENT_TIMESTAMP
+            column: created_at
+    lifecycleCallbacks: {  }

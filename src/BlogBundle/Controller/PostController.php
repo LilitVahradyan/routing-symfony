@@ -11,10 +11,21 @@
     }
 
     public function getSinglePostAction($id){
-        return $this->render('@Blog/Post/post.html.twig');
+		$entityManager = $this->getDoctrine()->getManager();
+		$post = $entityManager->getRepository('sBlogBundle:Posts')->findOneBy(['id'=>$id, 'postType'=>'post']);
+		$postData['title'] = $post->getTitle();
+		$postData['content'] = $post->getContent();
+		$postData['excerpt'] = $post->getExcerpt();
+		$postData['viewCount'] = $post->getViewCount();
+		$postData['createdAt'] = $post->getCreatedAt()->format('Y-m-d H:i:s');
+
+        return $this->render('@Blog/Post/post.html.twig',$postData );
     }
 
-    public function getCategoryPostAction($id){
-        return $this->render('@Blog/Post/category.html.twig');
+    public function getCategoryPostAction($slug){
+        $entityManager = $this->getDoctrine()->getManager();
+        $post = $entityManager->getRepository('BlogBundle:Categories')->findOneBy(['slug'=>$slug]);
+        $postData['name'] = $post->getName();
+        return $this->render('@Blog/Post/category.html.twig', $postData);
     }
 	}

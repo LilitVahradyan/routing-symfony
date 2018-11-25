@@ -2,5 +2,5 @@ post_page:
     path: post/{id}
     controller: BlogBundle:Post:getSinglePost
 category:
-    path: category/{id}
+    path: category/{slug}
     controller: BlogBundle:Post:getCategoryPost

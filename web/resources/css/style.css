@@ -776,6 +776,13 @@ RESPONSIVE
 /*----------------------------*\
 	category
 \*----------------------------*/
+.ul{
+    display: flex;
+    justify-content: start;
+}
+.ul li{
+    padding-left: 5px;
+}
  .category-widget ul li {
      display:block;
      padding-bottom: 10px;

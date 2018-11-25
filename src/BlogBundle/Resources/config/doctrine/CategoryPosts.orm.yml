@@ -1,0 +1,19 @@
+BlogBundle\Entity\CategoryPosts:
+    type: entity
+    table: category_posts
+    id:
+        postId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: post_id
+        catId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: cat_id
+    lifecycleCallbacks: {  }
